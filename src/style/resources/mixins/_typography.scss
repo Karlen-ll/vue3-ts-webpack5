@@ -1,0 +1,41 @@
+// --- --- ---
+// Typography
+
+@mixin base-typography() {
+  //color: $text-color;
+  font: {
+    //weight: $regular;
+    size: $base-font-size;
+    //family: $base-font-family, $fallback-font-family;
+  }
+  //line-height: $font-sm-line;
+  -webkit-text-size-adjust: 100%;
+}
+
+@mixin add-text-margin($margin: 16px) {
+  margin-bottom: $margin;
+}
+
+@mixin typography($size, $fontWeight: normal, $hasMargin: false) {
+  font-size: $size;
+  font-weight: $fontWeight;
+
+  @if $hasMargin {
+    @include add-text-margin();
+  }
+}
+
+@mixin link($color, $activeColor) {
+  &,
+  &:hover,
+  &:active,
+  &:visited {
+    color: $color;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    color: $activeColor;
+  }
+}

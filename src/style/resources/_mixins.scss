@@ -1,0 +1,39 @@
+@import 'mixins/typography';
+@import 'mixins/fonts';
+@import 'mixins/grid';
+@import 'mixins/vue';
+
+// Outline
+@mixin outline {
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Accessible hiding
+@mixin visually-hidden {
+  &:not(:focus):not(:active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+@mixin disable-last-margin($side) {
+  &:last-child {
+    margin-#{$side}: 0;
+  }
+}
+
+@mixin disable-nth-margin($nth, $side) {
+  &:nth-child(#{$nth}) {
+    margin-#{$side}: 0;
+  }
+}

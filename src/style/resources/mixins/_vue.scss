@@ -1,0 +1,60 @@
+// --- --- ---
+// Vue Animation
+
+// Start enter animation
+@mixin VueEnter($name) {
+  .#{$name}-enter {
+    @content;
+  }
+}
+
+// Animation enter in progress
+@mixin VueEnterActive($name) {
+  .#{$name}-enter-active {
+    @content;
+  }
+}
+
+// End enter animation
+@mixin VueEnterTo($name) {
+  .#{$name}-enter-to {
+    @content;
+  }
+}
+
+// Start leave animation
+@mixin VueLeave($name) {
+  .#{$name}-leave {
+    @content;
+  }
+}
+
+// Animation leave in progress
+@mixin VueLeaveActive($name) {
+  .#{$name}-leave-active {
+    @content;
+  }
+}
+
+// End leave animation
+@mixin VueLeaveTo($name) {
+  .#{$name}-leave-to {
+    @content;
+  }
+}
+
+// Start enter animation
+@mixin VueShow($name) {
+  .#{$name}-enter,
+  .#{$name}-leave-to {
+    @content;
+  }
+}
+
+// Animation enter in progress
+@mixin VueHide($name) {
+  .#{$name}-enter-active,
+  .#{$name}-leave-active {
+    @content;
+  }
+}

@@ -1,0 +1,18 @@
+// --- --- ---
+// Font-face
+
+@mixin webfont($family, $woffPath, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: local($family), url($woffPath) format('woff');
+  }
+}
+
+// Font smoothing
+@mixin smooth-font {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

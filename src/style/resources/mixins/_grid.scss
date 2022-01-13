@@ -1,0 +1,32 @@
+// --- --- ---
+// Media queries
+
+@mixin create-media-query($max-width) {
+  @media all and (max-width: ($max-width - 1px)) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @include create-media-query($desktop) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @include create-media-query($tablet) {
+    @content;
+  }
+}
+
+@mixin on-phone {
+  @include create-media-query($phone) {
+    @content;
+  }
+}
+
+@mixin on-extra {
+  @media all and (min-width: ($desktop)) {
+    @content;
+  }
+}

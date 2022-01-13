@@ -1,0 +1,9 @@
+globals: {
+    "@vue/vue3-jest": {
+        "resources": {
+            "scss": [
+                "./src/style/globals.scss"
+            ]
+        }
+    }
+}
